@@ -2,6 +2,7 @@ package com.javarush.spring.controller;
 
 import com.javarush.spring.domain.Task;
 import com.javarush.spring.service.TaskService;
+import com.javarush.spring.task_exception_handler.NoSuchTaskException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -49,7 +50,7 @@ public class TaskController {
                      @PathVariable Integer id,
                      @RequestBody TaskInfo taskInfo){
         if(isNull(id) || id <= 0){
-            throw new RuntimeException("Invalid id");
+            throw new NoSuchTaskException("Invalid id");
         }
         Task task = taskService.edit(id, taskInfo.getDescription(), taskInfo.getStatus());
 
@@ -66,9 +67,9 @@ public class TaskController {
 
     @DeleteMapping("/{id}")
     public String delete(Model model,
-                     @PathVariable Integer id){
+                     @PathVariable Integer id) {
         if(isNull(id) || id <= 0){
-            throw new RuntimeException("Invalid id");
+            throw new NoSuchTaskException("Invalid id");
         }
         taskService.delete(id);
 
