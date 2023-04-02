@@ -6,8 +6,8 @@
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <properties>
-    <maven.compiler.source>18</maven.compiler.source>
-    <maven.compiler.target>18</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
   <name>com.javarush.guliyeva.spring Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -75,7 +75,7 @@
 
   </dependencies>
   <build>
-    <finalName>com.javarush.guliyeva.spring</finalName>
+    <finalName>root</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
